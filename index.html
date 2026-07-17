@@ -27,26 +27,26 @@
         <div class="secao">
             <h2>I. DADOS PESSOAIS E HISTÓRICO GERAL</h2>
             <label>1. Qual é o principal motivo (queixa) que te traz à consulta?[span_2](start_span)[span_2](end_span)</label>
-            <textarea id="q1" required></textarea>
+            <textarea id="q1"></textarea>
 
             <label>2. Quando esse problema começou e o que estava acontecendo na sua vida nessa época?[span_3](start_span)[span_3](end_span)</label>
-            <textarea id="q2" placeholder="Perdas, estresse, mudanças..." required></textarea>
+            <textarea id="q2" placeholder="Perdas, estresse, mudanças..."></textarea>
 
             <label>3. Quais tratamentos você já realizou ou realiza atualmente?[span_4](start_span)[span_4](end_span)</label>
-            <textarea id="q3" placeholder="Medicamentos, terapias, cirurgias..." required></textarea>
+            <textarea id="q3" placeholder="Medicamentos, terapias, cirurgias..."></textarea>
         </div>
 
         <!-- SEÇÃO II -->
         <div class="secao">
             <h2>II. DETALHANDO OS SINTOMAS FÍSICOS</h2>
             <label>4. O que faz o seu sintoma principal MELHORAR?[span_5](start_span)[span_5](end_span)</label>
-            <textarea id="q4" placeholder="Ex: calor, repouso, movimento, ar livre..." required></textarea>
+            <textarea id="q4" placeholder="Ex: calor, repouso, movimento, ar livre..."></textarea>
 
             <label>5. O que faz o seu sintoma principal PIORAR?[span_6](start_span)[span_6](end_span)</label>
-            <textarea id="q5" placeholder="Ex: toque, frio, barulho, jejum..." required></textarea>
+            <textarea id="q5" placeholder="Ex: toque, frio, barulho, jejum..."></textarea>
 
             <label>6. Como e onde exatamente você sente a dor/desconforto?[span_7](start_span)[span_7](end_span)</label>
-            <textarea id="q6" placeholder="Ex: pontada, queimação, local fixo ou muda de lugar..." required></textarea>
+            <textarea id="q6" placeholder="Ex: pontada, queimação, local fixo ou muda de lugar..."></textarea>
         </div>
 
         <!-- SEÇÃO III -->
@@ -55,35 +55,35 @@
             <label>7. Clima e Temperatura:</label>
             <select id="q7_1"><option value="Calorenta">Mais calorenta</option><option value="Friorenta">Mais friorenta</option></select>
             <label style="font-weight:normal;">Como reage ao vento, chuva ou mudanças de temperatura?[span_8](start_span)[span_8](end_span)</label>
-            <input type="text" id="q7_2" required>
+            <input type="text" id="q7_2">
 
             <label>8. Transpiração (Suor):</label>
-            <textarea id="q8" placeholder="Suas muito? Em quais partes? Tem odor característico?" required></textarea>
+            <textarea id="q8" placeholder="Suas muito? Em quais partes? Tem odor característico?"></textarea>
 
             <label>9. Sono:</label>
-            <textarea id="q9" placeholder="Qualidade do sono, posição preferida, sonhos repetitivos..." required></textarea>
+            <textarea id="q9" placeholder="Qualidade do sono, posição preferida, sonhos repetitivos..."></textarea>
 
             <label>10. Apetite, Sede e Digestão:</label>
-            <textarea id="q10" placeholder="Sede, desejos alimentares (doce, salgado...), alimentos que evita..." required></textarea>
+            <textarea id="q10" placeholder="Sede, desejos alimentares (doce, salgado...), alimentos que evita..."></textarea>
         </div>
 
         <!-- SEÇÃO IV -->
         <div class="secao">
             <h2>IV. ASPECTOS MENTAIS E EMOCIONAIS</h2>
             <label>11. Como você descreve o seu temperamento básico no dia a dia?[span_9](start_span)[span_9](end_span)</label>
-            <textarea id="q11" placeholder="Ex: ansioso, calmo, detalhista, indeciso..." required></textarea>
+            <textarea id="q11" placeholder="Ex: ansioso, calmo, detalhista, indeciso..."></textarea>
 
             <label>12. Como você reage em situações de estresse ou raiva?[span_10](start_span)[span_10](end_span)</label>
-            <textarea id="q12" placeholder="Guarda para si, explode, chora, precisa ficar sozinho..." required></textarea>
+            <textarea id="q12" placeholder="Guarda para si, explode, chora, precisa ficar sozinho..."></textarea>
 
             <label>13. Consolo: O carinho das pessoas te ajuda ou te irrita quando está triste?[span_11](start_span)[span_11](end_span)</label>
-            <input type="text" id="q13" required>
+            <input type="text" id="q13">
 
             <label>14. Medos e Ansiedades:</label>
-            <textarea id="q14" placeholder="Maiores medos, sofre por antecipação?..." required></textarea>
+            <textarea id="q14" placeholder="Maiores medos, sofre por antecipação?..."></textarea>
 
             <label>15. Memória e Concentração:</label>
-            <textarea id="q15" placeholder="Foco intelectual, esquecimento de palavras/nomes..." required></textarea>
+            <textarea id="q15" placeholder="Foco intelectual, esquecimento de palavras/nomes..."></textarea>
         </div>
 
         <!-- SEÇÃO V -->
@@ -98,18 +98,19 @@
 
     <script>
         function enviarWhatsApp() {
-            // INSIRA SEU TELEFONE AQUI (DDD + Número, apenas números. Ex: 5511999999999)
-            const SEU_TELEFONE = "5522997120684; 
+            // INSIRA SEU TELEFONE AQUI (DDD + Número, apenas números)
+            const SEU_TELEFONE = "5522997120684"; 
 
             let texto = "*RESPOSTAS DO QUESTIONÁRIO HOMEOPÁTICO*\n\n";
-            texto += "*I. GERAL*\n1: " + document.getElementById('q1').value + "\n2: " + document.getElementById('q2').value + "\n3: " + document.getElementById('q3').value + "\n\n";
-            texto += "*II. SINTOMAS FÍSICOS*\n4 (Melhora): " + document.getElementById('q4').value + "\n5 (Piora): " + document.getElementById('q5').value + "\n6 (Dor): " + document.getElementById('q6').value + "\n\n";
-            texto += "*III. GERAIS*\n7 (Clima): " + document.getElementById('q7_1').value + " / " + document.getElementById('q7_2').value + "\n8 (Suor): " + document.getElementById('q8').value + "\n9 (Sono): " + document.getElementById('q9').value + "\n10 (Digestão): " + document.getElementById('q10').value + "\n\n";
-            texto += "*IV. EMOCIONAIS*\n11 (Temperamento): " + document.getElementById('q11').value + "\n12 (Estresse): " + document.getElementById('q12').value + "\n13 (Consolo): " + document.getElementById('q13').value + "\n14 (Medos): " + document.getElementById('q14').value + "\n15 (Foco): " + document.getElementById('q15').value + "\n\n";
-            texto += "*V. SINGULARIDADE*\n16: " + document.getElementById('q16').value;
+            texto += "*I. GERAL*\n1: " + (document.getElementById('q1').value || "Não respondido") + "\n2: " + (document.getElementById('q2').value || "Não respondido") + "\n3: " + (document.getElementById('q3').value || "Não respondido") + "\n\n";
+            texto += "*II. SINTOMAS FÍSICOS*\n4 (Melhora): " + (document.getElementById('q4').value || "Não respondido") + "\n5 (Piora): " + (document.getElementById('q5').value || "Não respondido") + "\n6 (Dor): " + (document.getElementById('q6').value || "Não respondido") + "\n\n";
+            texto += "*III. GERAIS*\n7 (Clima): " + document.getElementById('q7_1').value + " / " + (document.getElementById('q7_2').value || "Não respondido") + "\n8 (Suor): " + (document.getElementById('q8').value || "Não respondido") + "\n9 (Sono): " + (document.getElementById('q9').value || "Não respondido") + "\n10 (Digestão): " + (document.getElementById('q10').value || "Não respondido") + "\n\n";
+            texto += "*IV. EMOCIONAIS*\n11 (Temperamento): " + (document.getElementById('q11').value || "Não respondido") + "\n12 (Estresse): " + (document.getElementById('q12').value || "Não respondido") + "\n13 (Consolo): " + (document.getElementById('q13').value || "Não respondido") + "\n14 (Medos): " + (document.getElementById('q14').value || "Não respondido") + "\n15 (Foco): " + (document.getElementById('q15').value || "Não respondido") + "\n\n";
+            texto += "*V. SINGULARIDADE*\n16: " + (document.getElementById('q16').value || "Não respondido");
 
+            // Redirecionamento direto e seguro, ideal para celulares e tablets
             let url = "https://api.whatsapp.com/send?phone=" + SEU_TELEFONE + "&text=" + encodeURIComponent(texto);
-            window.open(url, '_blank');
+            window.location.href = url;
         }
     </script>
 </body>
