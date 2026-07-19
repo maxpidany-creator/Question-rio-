@@ -3,115 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionário Pré-Consulta Homeopática</title>
+    <title>Questionário Pré-Consulta</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f7f6; color: #333; padding: 20px; max-width: 600px; margin: 0 auto; }
-        h1 { color: #2c3e50; text-align: center; font-size: 20px; }
-        p.intro { font-size: 14px; color: #555; background: #e8ecef; padding: 15px; border-radius: 8px; line-height: 1.5; }
-        .secao { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h2 { font-size: 16px; color: #16a085; border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 0; }
-        label { font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; font-size: 14px; }
-        input[type="text"], textarea, select { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
-        textarea { resize: vertical; height: 80px; }
-        button { background-color: #25d366; color: white; border: none; padding: 15px; width: 100%; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        button:hover { background-color: #128c7e; }
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .aviso { background-color: #eef2f5; padding: 15px; border-radius: 6px; font-size: 14px; color: #555; line-height: 1.5; margin-bottom: 25px; }
+        h2 { color: #0f9d75; font-size: 16px; text-transform: uppercase; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        .campo { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; font-size: 14px; margin-bottom: 8px; line-height: 1.4; }
+        textarea, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit; font-size: 14px; resize: vertical; }
+        textarea::placeholder { color: #999; font-style: italic; }
+        
+        /* Estilos da nova seção de escala emocional */
+        .bloco-escala { background-color: #fafafa; border: 1px dashed #0f9d75; padding: 15px; border-radius: 6px; margin: 20px 0; }
+        .bloco-escala h3 { color: #0f9d75; margin-top: 0; font-size: 15px; }
+        .bloco-escala p { font-size: 13px; color: #666; margin-bottom: 15px; }
+        .pergunta-escala { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0; }
+        .pergunta-escala:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .opcoes-escala { display: flex; gap: 15px; margin-top: 5px; }
+        .opcao { display: flex; align-items: center; gap: 4px; font-size: 13px; font-weight: normal; cursor: pointer; }
+        
+        .btn-submit { display: block; width: 100%; background-color: #25d366; color: white; text-align: center; padding: 15px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 30px; transition: background 0.2s; }
+        .btn-submit:hover { background-color: #1ebd59; }
     </style>
 </head>
 <body>
 
-    <h1>QUESTIONÁRIO DE AUTO-OBSERVAÇÃO PRÉ-CONSULTA HOMEOPÁTICA</h1>
-    <p class="intro">Caro(a) cliente, a Homeopatia busca compreender você como um todo[span_0](start_span)[span_0](end_span). Reserve de 20 a 30 minutos para responder às questões abaixo com o máximo de detalhes possível[span_1](start_span)[span_1](end_span). Ao final, clique em "Enviar" para encaminhar direto pelo WhatsApp.</p>
+<div class="container">
+    <div class="aviso">
+        Caro(a) cliente, a Homeopatia busca compreender você como um todo. Reserve de 20 a 30 minutos para responder às questões abaixo com o máximo de detalhes possível. Ao final, clique em "Enviar" para encaminhar direto pelo WhatsApp.
+    </div>
 
-    <form id="quizForm">
-        <!-- SEÇÃO I -->
-        <div class="secao">
-            <h2>I. DADOS PESSOAIS E HISTÓRICO GERAL</h2>
-            <label>1. Qual é o principal motivo (queixa) que te traz à consulta?[span_2](start_span)[span_2](end_span)</label>
-            <textarea id="q1"></textarea>
-
-            <label>2. Quando esse problema começou e o que estava acontecendo na sua vida nessa época?[span_3](start_span)[span_3](end_span)</label>
-            <textarea id="q2" placeholder="Perdas, estresse, mudanças..."></textarea>
-
-            <label>3. Quais tratamentos você já realizou ou realiza atualmente?[span_4](start_span)[span_4](end_span)</label>
-            <textarea id="q3" placeholder="Medicamentos, terapias, cirurgias..."></textarea>
+    <form id="formQuestionario">
+        <!-- I. DADOS PESSOAIS -->
+        <h2>I. Dados Pessoais e Histórico Geral</h2>
+        <div class="campo">
+            <label>1. Qual é o principal motivo (queixa) que te traz à consulta?</label>
+            <textarea id="q1" rows="3" placeholder="Ex: dor crônica, insônia, ansiedade..."></textarea>
+        </div>
+        <div class="campo">
+            <label>2. Quando esse problema começou e o que estava acontecendo na sua vida nessa época?</label>
+            <textarea id="q2" rows="3" placeholder="Perdas, estresse, mudanças..."></textarea>
+        </div>
+        <div class="campo">
+            <label>3. Quais tratamentos você já realizou ou realiza atualmente?</label>
+            <textarea id="q3" rows="3" placeholder="Medicamentos, terapias, cirurgias..."></textarea>
         </div>
 
-        <!-- SEÇÃO II -->
-        <div class="secao">
-            <h2>II. DETALHANDO OS SINTOMAS FÍSICOS</h2>
-            <label>4. O que faz o seu sintoma principal MELHORAR?[span_5](start_span)[span_5](end_span)</label>
-            <textarea id="q4" placeholder="Ex: calor, repouso, movimento, ar livre..."></textarea>
-
-            <label>5. O que faz o seu sintoma principal PIORAR?[span_6](start_span)[span_6](end_span)</label>
-            <textarea id="q5" placeholder="Ex: toque, frio, barulho, jejum..."></textarea>
-
-            <label>6. Como e onde exatamente você sente a dor/desconforto?[span_7](start_span)[span_7](end_span)</label>
-            <textarea id="q6" placeholder="Ex: pontada, queimação, local fixo ou muda de lugar..."></textarea>
+        <!-- II. SINTOMAS FÍSICOS -->
+        <h2>II. Detalhando os Sintomas Físicos</h2>
+        <div class="campo">
+            <label>4. O que faz o seu sintoma principal MELHORAR?</label>
+            <textarea id="q4" rows="3" placeholder="Ex: calor, repouso, movimento, ar livre..."></textarea>
+        </div>
+        <div class="campo">
+            <label>5. O que faz o seu sintoma principal PIORAR?</label>
+            <textarea id="q5" rows="3" placeholder="Ex: toque, frio, barulho, jejum..."></textarea>
+        </div>
+        <div class="campo">
+            <label>6. Como e onde exatamente você sente a dor/desconforto?</label>
+            <textarea id="q6" rows="3" placeholder="Ex: pontada, queimação, local fixo ou muda de lugar..."></textarea>
         </div>
 
-        <!-- SEÇÃO III -->
-        <div class="secao">
-            <h2>III. SINTOMAS GERAIS</h2>
+        <!-- III. SINTOMAS GERAIS -->
+        <h2>III. Sintomas Gerais</h2>
+        <div class="campo">
             <label>7. Clima e Temperatura:</label>
-            <select id="q7_1"><option value="Calorenta">Mais calorenta</option><option value="Friorenta">Mais friorenta</option></select>
-            <label style="font-weight:normal;">Como reage ao vento, chuva ou mudanças de temperatura?[span_8](start_span)[span_8](end_span)</label>
-            <input type="text" id="q7_2">
-
+            <select id="q7_select">
+                <option value="Mais calorenta">Mais calorenta</option>
+                <option value="Mais friorenta">Mais friorenta</option>
+            </select>
+            <label style="margin-top: 10px; font-weight: normal;">Como reage ao vento, chuva ou mudanças de temperatura?</label>
+            <textarea id="q7_text" rows="2"></textarea>
+        </div>
+        <div class="campo">
             <label>8. Transpiração (Suor):</label>
-            <textarea id="q8" placeholder="Suas muito? Em quais partes? Tem odor característico?"></textarea>
-
+            <textarea id="q8" rows="3" placeholder="Suas muito? Em quais partes? Tem odor característico?"></textarea>
+        </div>
+        <div class="campo">
             <label>9. Sono:</label>
-            <textarea id="q9" placeholder="Qualidade do sono, posição preferida, sonhos repetitivos..."></textarea>
-
+            <textarea id="q9" rows="3" placeholder="Qualidade do sono, posição preferida, sonhos repetitivos..."></textarea>
+        </div>
+        <div class="campo">
             <label>10. Apetite, Sede e Digestão:</label>
-            <textarea id="q10" placeholder="Sede, desejos alimentares (doce, salgado...), alimentos que evita..."></textarea>
+            <textarea id="q10" rows="3" placeholder="Sede, desejos alimentares (doce, salgado...), alimentos que evita..."></textarea>
         </div>
 
-        <!-- SEÇÃO IV -->
-        <div class="secao">
-            <h2>IV. ASPECTOS MENTAIS E EMOCIONAIS</h2>
-            <label>11. Como você descreve o seu temperamento básico no dia a dia?[span_9](start_span)[span_9](end_span)</label>
-            <textarea id="q11" placeholder="Ex: ansioso, calmo, detalhista, indeciso..."></textarea>
+        <!-- IV. ASPECTOS MENTAIS E EMOCIONAIS -->
+        <h2>IV. Aspectos Mentais e Emocionais</h2>
+        <div class="campo">
+            <label>11. Como você descreve o seu temperamento básico no dia a dia?</label>
+            <textarea id="q11" rows="3" placeholder="Ex: ansioso, calmo, detalhista, indeciso..."></textarea>
+        </div>
+        <div class="campo">
+            <label>12. Como você reage em situações de estresse ou raiva?</label>
+            <textarea id="q12" rows="3" placeholder="Guarda para si, explode, chora, precisa ficar sozinho..."></textarea>
+        </div>
 
-            <label>12. Como você reage em situações de estresse ou raiva?[span_10](start_span)[span_10](end_span)</label>
-            <textarea id="q12" placeholder="Guarda para si, explode, chora, precisa ficar sozinho..."></textarea>
+        <!-- BLOCO EMOCIONAL ADICIONADO -->
+        <div class="bloco-escala">
+            <h3>📌 Autoavaliação de Dinâmica Emocional</h3>
+            <p>Selecione de 1 (Nunca/Discordo totalmente) a 5 (Sempre/Concordo totalmente) para cada afirmação:</p>
+            
+            <div class="pergunta-escala">
+                <label>A. Consigo identificar com clareza o que estou sentindo quando meu humor muda repentinamente.</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_a" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_a" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_a" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_a" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_a" value="5"> 5</label>
+                </div>
+            </div>
 
-            <label>13. Consolo: O carinho das pessoas te ajuda ou te irrita quando está triste?[span_11](start_span)[span_11](end_span)</label>
-            <input type="text" id="q13">
+            <div class="pergunta-escala">
+                <label>B. Reconheço os sinais físicos que o meu corpo dá quando estou sob estresse (ex: aperto no peito, tensão nos ombros, dor de cabeça).</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_b" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_b" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_b" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_b" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_b" value="5"> 5</label>
+                </div>
+            </div>
 
+            <div class="pergunta-escala">
+                <label>C. Sei exatamente quais são os principais "gatilhos" que me deixam irritado(a) ou ansioso(a).</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_c" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_c" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_c" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_c" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_c" value="5"> 5</label>
+                </div>
+            </div>
+
+            <div class="pergunta-escala">
+                <label>D. Quando sinto uma emoção intensa (como raiva ou tristeza), consigo pausar antes de reagir por impulso.</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_d" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_d" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_d" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_d" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_d" value="5"> 5</label>
+                </div>
+            </div>
+
+            <div class="pergunta-escala">
+                <label>E. Costumo guardar minhas frustrações para mim mesmo(a) até não aguentar mais e "explodir" ou desabar.</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_e" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_e" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_e" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_e" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_e" value="5"> 5</label>
+                </div>
+            </div>
+
+            <div class="pergunta-escala">
+                <label>F. Quando as coisas não saem como o planejado, consigo me adaptar sem entrar em desespero profundo.</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_f" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_f" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_f" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_f" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_f" value="5"> 5</label>
+                </div>
+            </div>
+
+            <div class="pergunta-escala">
+                <label>G. Diante de um erro ou fracasso, tendo a ser muito cruel e autocrítico(a) comigo mesmo(a).</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_g" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_g" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_g" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_g" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_g" value="5"> 5</label>
+                </div>
+            </div>
+
+            <div class="pergunta-escala">
+                <label>H. Sinto que tenho controle sobre como reajo aos problemas da vida, em vez de me sentir apenas uma vítima das circunstâncias.</label>
+                <div class="opcoes-escala">
+                    <label class="opcao"><input type="radio" name="escala_h" value="1"> 1</label>
+                    <label class="opcao"><input type="radio" name="escala_h" value="2"> 2</label>
+                    <label class="opcao"><input type="radio" name="escala_h" value="3"> 3</label>
+                    <label class="opcao"><input type="radio" name="escala_h" value="4"> 4</label>
+                    <label class="opcao"><input type="radio" name="escala_h" value="5"> 5</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>13. Consolo: O carinho das pessoas te ajuda ou te irrita quando está triste?</label>
+            <textarea id="q13" rows="3"></textarea>
+        </div>
+        <div class="campo">
             <label>14. Medos e Ansiedades:</label>
-            <textarea id="q14" placeholder="Maiores medos, sofre por antecipação?..."></textarea>
-
+            <textarea id="q14" rows="3" placeholder="Maiores medos, sofre por antecipação?..."></textarea>
+        </div>
+        <div class="campo">
             <label>15. Memória e Concentração:</label>
-            <textarea id="q15" placeholder="Foco intelectual, esquecimento de palavras/nomes..."></textarea>
+            <textarea id="q15" rows="3" placeholder="Foco intelectual, esquecimento de palavras/nomes..."></textarea>
         </div>
 
-        <!-- SEÇÃO V -->
-        <div class="secao">
-            <h2>V. ESPAÇO LIVRE</h2>
-            <label>16. Existe alguma mania, hábito peculiar ou sensação estranha?[span_12](start_span)[span_12](end_span)</label>
-            <textarea id="q16" placeholder="Ex: não suporto nada apertando o pescoço..."></textarea>
+        <!-- V. ESPAÇO LIVRE -->
+        <h2>V. Espaço Livre</h2>
+        <div class="campo">
+            <label>16. Existe alguma mania, hábito peculiar ou sensação estranha?</label>
+            <textarea id="q16" rows="3" placeholder="Ex: não suporto nada apertando o pescoço..."></textarea>
         </div>
 
-        <button type="button" onclick="enviarWhatsApp()">Enviar Respostas pelo WhatsApp</button>
+        <button type="button" class="btn-submit" onclick="enviarWhatsApp()">Enviar Respostas pelo WhatsApp</button>
     </form>
+</div>
 
-    <script>
-        function enviarWhatsApp() {
-            // INSIRA SEU TELEFONE AQUI (DDD + Número, apenas números)
-            const SEU_TELEFONE = "5522997120684"; 
+<script>
+    function enviarWhatsApp() {
+        // Insira o seu número de WhatsApp aqui (apenas números, com DDD)
+        const numeroTelefone = "5522997120684"; 
 
-            let texto = "*RESPOSTAS DO QUESTIONÁRIO HOMEOPÁTICO*\n\n";
-            texto += "*I. GERAL*\n1: " + (document.getElementById('q1').value || "Não respondido") + "\n2: " + (document.getElementById('q2').value || "Não respondido") + "\n3: " + (document.getElementById('q3').value || "Não respondido") + "\n\n";
-            texto += "*II. SINTOMAS FÍSICOS*\n4 (Melhora): " + (document.getElementById('q4').value || "Não respondido") + "\n5 (Piora): " + (document.getElementById('q5').value || "Não respondido") + "\n6 (Dor): " + (document.getElementById('q6').value || "Não respondido") + "\n\n";
-            texto += "*III. GERAIS*\n7 (Clima): " + document.getElementById('q7_1').value + " / " + (document.getElementById('q7_2').value || "Não respondido") + "\n8 (Suor): " + (document.getElementById('q8').value || "Não respondido") + "\n9 (Sono): " + (document.getElementById('q9').value || "Não respondido") + "\n10 (Digestão): " + (document.getElementById('q10').value || "Não respondido") + "\n\n";
-            texto += "*IV. EMOCIONAIS*\n11 (Temperamento): " + (document.getElementById('q11').value || "Não respondido") + "\n12 (Estresse): " + (document.getElementById('q12').value || "Não respondido") + "\n13 (Consolo): " + (document.getElementById('q13').value || "Não respondido") + "\n14 (Medos): " + (document.getElementById('q14').value || "Não respondido") + "\n15 (Foco): " + (document.getElementById('q15').value || "Não respondido") + "\n\n";
-            texto += "*V. SINGULARIDADE*\n16: " + (document.getElementById('q16').value || "Não respondido");
+        // Função auxiliar para capturar o valor selecionado no radio button
+        const obterValorRadio = (nome) => {
+            const elemento = document.querySelector(`input[name="${nome}"]:checked`);
+            return elemento ? elemento.value : "Não respondido";
+        };
 
-            // Redirecionamento direto e seguro, ideal para celulares e tablets
-            let url = "https://api.whatsapp.com/send?phone=" + SEU_TELEFONE + "&text=" + encodeURIComponent(texto);
-            window.location.href = url;
-        }
-    </script>
+        // Coleta de dados estruturada para mensagem de texto
+        let texto = `*QUESTIONÁRIO PRÉ-CONSULTA*\n\n`;
+        
+        texto += `*I. DADOS PESSOAIS E HISTÓRICO*\n`;
+        texto += `1. Motivo: ${document.getElementById('q1').value}\n`;
+        texto += `2. Início/Época: ${document.getElementById('q2').value}\n`;
+        texto += `3. Tratamentos realizados: ${document.getElementById('q3').value}\n\n`;
+
+        texto += `*II. DETALHANDO SINTOMAS FÍSICOS*\n`;
+        texto += `4. Melhora com: ${document.getElementById('q4').value}\n`;
+        texto += `5. Piora com: ${document.getElementById('q5').value}\n`;
+        texto += `6. Localização/Tipo de dor: ${document.getElementById('q6').value}\n\n`;
+
+        texto += `*III. SINTOMAS GERAIS*\n`;
+        texto += `7. Clima: ${document.getElementById('q7_select').value} - Reação: ${document.getElementById('q7_text').value}\n`;
+        texto += `8. Transpiração: ${document.getElementById('q8').value}\n`;
+        texto += `9. Sono: ${document.getElementById('q9').value}\n`;
+        texto += `10. Apetite/Sede/Digestão: ${document.getElementById('q10').value}\n\n`;
+
+        texto += `*IV. ASPECTOS MENTAIS E EMOCIONAIS*\n`;
+        texto += `11. Temperamento: ${document.getElementById('q11').value}\n`;
+        texto += `12. Reação ao estresse/raiva: ${document.getElementById('q12').value}\n\n`;
+
+        texto += `*📌 AUTOAVALIAÇÃO EMOCIONAL (Escala 1 a 5)*\n`;
+        texto += `A. Identifica mudanças de humor: ${obterValorRadio('escala_a')}\n`;
+        texto += `B. Sinais físicos de estresse: ${obterValorRadio('escala_b')}\n`;
+        texto += `C. Conhece seus gatilhos: ${obterValorRadio('escala_c')}\n`;
+        texto += `D. Pausa antes de agir por impulso: ${obterValorRadio('escala_d')}\n`;
+        texto += `E. Guarda frustrações / Explode: ${obterValorRadio('escala_e')}\n`;
+        texto += `F. Se adapta a imprevistos: ${obterValorRadio('escala_f')}\n`;
+        texto += `G. É muito autocrítico(a): ${obterValorRadio('escala_g')}\n`;
+        texto += `H. Sente que tem controle da reação: ${obterValorRadio('escala_h')}\n\n`;
+
+        texto += `13. Consolo: ${document.getElementById('q13').value}\n`;
+        texto += `14. Medos/Ansiedades: ${document.getElementById('q14').value}\n`;
+        texto += `15. Memória/Concentração: ${document.getElementById('q15').value}\n\n`;
+
+        texto += `*V. ESPAÇO LIVRE*\n`;
+        texto += `16. Manias/Sensações estranhas: ${document.getElementById('q16').value}`;
+
+        // Codifica o texto para URL e redireciona para o WhatsApp
+        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(texto)}`;
+        window.open(urlWhatsApp, '_blank');
+    }
+</script>
+
 </body>
 </html>
