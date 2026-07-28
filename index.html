@@ -144,13 +144,6 @@
 
 <script>
   function enviarParaWhatsApp() {
-    // =========================================================================
-    // 🟢 COLOQUE SEU WHATSAPP AQUI NO FINAL DO CÓDIGO
-    // Digite apenas números, com o 55 e o DDD. Exemplo: "5511999998888"
-    // =========================================================================
-    var MEU_NUMERO_WHATSAPP = "5522997120684";
-    // =========================================================================
-
     var nome = document.getElementById('nome').value;
     var dataNasc = document.getElementById('dataNasc').value;
     var idade = document.getElementById('idade').value;
@@ -214,6 +207,13 @@
 
     texto += "*7. OBJETIVOS*\n";
     texto += "• Objetivos: " + objetivos + "\n";
+
+    // =========================================================================
+    // 🟢 COLOQUE SEU WHATSAPP ABAIXO (Abaixo da linha 218 do seu arquivo)
+    // Digite apenas números, com o 55 e o DDD. Exemplo: "5511999998888"
+    // =========================================================================
+    var MEU_NUMERO_WHATSAPP = "5522997120684";
+    // =========================================================================
 
     var link = "https://wa.me/" + MEU_NUMERO_WHATSAPP + "?text=" + encodeURIComponent(texto);
     window.open(link, '_blank');
