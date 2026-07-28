@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anamnese Integrativa – Avaliação Inicial</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    .container { max-width: 800px; background: #fff; margin: auto; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h1, h2, h3 { color: #2c3e50; }
+    .section { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #ddd; }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    input[type="text"], input[type="date"], select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    .btn-submit { background-color: #25d366; color: white; border: none; padding: 15px 25px; font-size: 18px; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px; }
+    .btn-submit:hover { background-color: #128c7e; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>ANAMNESE INTEGRATIVA – AVALIAÇÃO INICIAL</h1>
+  <p><strong>Psicoterapia Integrativa • Homeopatia • Planejamento Terapêutico</strong></p>
+  <p>Bem-vindo(a)! Este formulário busca conhecer sua história de vida e aspectos emocionais para planejar seu acompanhamento.</p>
+  <p>⏱️ <strong>Tempo estimado:</strong> 10 a 15 minutos.</p>
+
+  <form id="anamneseForm">
+    
+    <!-- SEÇÃO 1 -->
+    <div class="section">
+      <h2>SEÇÃO 1: DADOS PESSOAIS</h2>
+      <label>1. Nome completo:</label>
+      <input type="text" id="nome" required />
+
+      <label>2. Data de Nascimento:</label>
+      <input type="date" id="dataNasc" />
+
+      <label>Idade:</label>
+      <input type="text" id="idade" />
+
+      <label>3. Estado civil:</label>
+      <select id="estadoCivil">
+        <option value="">Selecione...</option>
+        <option value="Solteiro(a)">Solteiro(a)</option>
+        <option value="Casado(a) / União Estável">Casado(a) / União Estável</option>
+        <option value="Divorciado(a)">Divorciado(a)</option>
+        <option value="Viúvo(a)">Viúvo(a)</option>
+      </select>
+
+      <label>4. Profissão:</label>
+      <input type="text" id="profissao" />
+
+      <label>5. Cidade/Estado onde mora:</label>
+      <input type="text" id="cidade" />
+
+      <label>6. Seu Telefone / WhatsApp (com DDD):</label>
+      <input type="text" id="telPaciente" required />
+    </div>
+
+    <!-- SEÇÃO 2 -->
+    <div class="section">
+      <h2>SEÇÃO 2: MOTIVO DA CONSULTA E SINTOMAS</h2>
+      <label>7. Qual é a principal queixa ou dificuldade que trouxe você hoje?</label>
+      <textarea id="queixa" rows="3"></textarea>
+
+      <label>8. Há quanto tempo enfrenta essa situação/sintoma?</label>
+      <select id="tempoSintoma">
+        <option value="">Selecione...</option>
+        <option value="Menos de 1 mês">Menos de 1 mês</option>
+        <option value="1 a 6 meses">1 a 6 meses</option>
+        <option value="6 meses a 2 anos">6 meses a 2 anos</option>
+        <option value="Mais de 2 anos">Mais de 2 anos</option>
+      </select>
+
+      <label>9. O que costuma PIORAR seus sintomas?</label>
+      <input type="text" id="piora" placeholder="Ex: Estresse, Frio, Repouso..." />
+
+      <label>10. O que costuma MELHORAR seus sintomas?</label>
+      <input type="text" id="melhora" placeholder="Ex: Banho quente, Movimento, Repouso..." />
+
+      <label>11. O que espera alcançar com o tratamento?</label>
+      <textarea id="expectativa" rows="2"></textarea>
+    </div>
+
+    <!-- SEÇÃO 3 -->
+    <div class="section">
+      <h2>SEÇÃO 3: HISTÓRIA DE VIDA</h2>
+      <label>12. Infância no geral (Nota de 1 a 5):</label>
+      <input type="text" id="notaInfancia" placeholder="1 = Difícil | 5 = Muito boa" />
+
+      <label>13. Sentia falta de algo importante na infância?</label>
+      <input type="text" id="faltaInfancia" />
+
+      <label>14. Lembrança, perda ou trauma relevante que precisa superar:</label>
+      <textarea id="trauma" rows="2"></textarea>
+    </div>
+
+    <!-- SEÇÃO 4 -->
+    <div class="section">
+      <h2>SEÇÃO 4: FUNCIONAMENTO EMOCIONAL</h2>
+      <label>15. Qual emoção é mais frequente na sua rotina?</label>
+      <input type="text" id="emocaoFrequente" placeholder="Ex: Ansiedade, Tristeza, Raiva, Culpa..." />
+
+      <label>16. Como reage sob estresse ou sofrimento emocional?</label>
+      <textarea id="reacaoEstresse" rows="2" placeholder="Ex: Isolo-me, choro, fico irritado(a)..."></textarea>
+    </div>
+
+    <!-- SEÇÃO 5 -->
+    <div class="section">
+      <h2>SEÇÃO 5: CRENÇAS E PADRÕES PESSOAIS</h2>
+      <label>17. Complete: "Desde criança aprendi que..."</label>
+      <input type="text" id="aprendiQue" />
+
+      <label>18. Complete: "Eu gostaria que as pessoas..."</label>
+      <input type="text" id="gostariaPessoas" />
+    </div>
+
+    <!-- SEÇÃO 6 -->
+    <div class="section">
+      <h2>SEÇÃO 6: GENERALIDADES FÍSICAS E HOMEOPATIA</h2>
+      <label>19. Sensibilidade à temperatura:</label>
+      <select id="temperatura">
+        <option value="">Selecione...</option>
+        <option value="Muito calorento(a)">Muito calorento(a)</option>
+        <option value="Mais calorento(a)">Mais calorento(a)</option>
+        <option value="Neutro/Normal">Neutro/Normal</option>
+        <option value="Mais friorento(a)">Mais friorento(a)</option>
+        <option value="Muito friorento(a)">Muito friorento(a)</option>
+      </select>
+
+      <label>20. Qualidade do Sono e Intestino:</label>
+      <textarea id="sonoIntestino" rows="2" placeholder="Descreva brevemente como dorme e como funciona seu intestino"></textarea>
+    </div>
+
+    <!-- SEÇÃO 7 -->
+    <div class="section">
+      <h2>SEÇÃO 7: FECHAMENTO</h2>
+      <label>21. Quais são seus 3 principais objetivos para os próximos 12 meses?</label>
+      <textarea id="objetivos" rows="3"></textarea>
+    </div>
+
+    <button type="button" class="btn-submit" onclick="enviarParaWhatsApp()">📲 Enviar Formulário pelo WhatsApp</button>
+  </form>
+</div>
+
+<script>
+  function enviarParaWhatsApp() {
+    var nome = document.getElementById('nome').value;
+    var dataNasc = document.getElementById('dataNasc').value;
+    var idade = document.getElementById('idade').value;
+    var estadoCivil = document.getElementById('estadoCivil').value;
+    var profissao = document.getElementById('profissao').value;
+    var cidade = document.getElementById('cidade').value;
+    var telPaciente = document.getElementById('telPaciente').value;
+    var queixa = document.getElementById('queixa').value;
+    var tempoSintoma = document.getElementById('tempoSintoma').value;
+    var piora = document.getElementById('piora').value;
+    var melhora = document.getElementById('melhora').value;
+    var expectativa = document.getElementById('expectativa').value;
+    var notaInfancia = document.getElementById('notaInfancia').value;
+    var faltaInfancia = document.getElementById('faltaInfancia').value;
+    var trauma = document.getElementById('trauma').value;
+    var emocaoFrequente = document.getElementById('emocaoFrequente').value;
+    var reacaoEstresse = document.getElementById('reacaoEstresse').value;
+    var aprendiQue = document.getElementById('aprendiQue').value;
+    var gostariaPessoas = document.getElementById('gostariaPessoas').value;
+    var temperatura = document.getElementById('temperatura').value;
+    var sonoIntestino = document.getElementById('sonoIntestino').value;
+    var objetivos = document.getElementById('objetivos').value;
+
+    if (!nome || !telPaciente) {
+      alert("Por favor, preencha o Nome e o seu WhatsApp antes de enviar.");
+      return;
+    }
+
+    var texto = "*ANAMNESE INTEGRATIVA - RESPOSTAS*\n\n";
+    texto += "*1. DADOS PESSOAIS*\n";
+    texto += "• Nome: " + nome + "\n";
+    texto += "• Nasc: " + dataNasc + " | Idade: " + idade + "\n";
+    texto += "• Estado Civil: " + estadoCivil + "\n";
+    texto += "• Profissão: " + profissao + "\n";
+    texto += "• Cidade: " + cidade + "\n";
+    texto += "• Tel Paciente: " + telPaciente + "\n\n";
+
+    texto += "*2. MOTIVO E SINTOMAS*\n";
+    texto += "• Queixa: " + queixa + "\n";
+    texto += "• Tempo: " + tempoSintoma + "\n";
+    texto += "• Piora com: " + piora + "\n";
+    texto += "• Melhora com: " + melhora + "\n";
+    texto += "• Expectativa: " + expectativa + "\n\n";
+
+    texto += "*3. HISTÓRIA DE VIDA*\n";
+    texto += "• Nota Infância: " + notaInfancia + "\n";
+    texto += "• Falta na infância: " + faltaInfancia + "\n";
+    texto += "• Lembrança/Trauma: " + trauma + "\n\n";
+
+    texto += "*4. FUNCIONAMENTO EMOCIONAL*\n";
+    texto += "• Emoção Frequente: " + emocaoFrequente + "\n";
+    texto += "• Reação ao Estresse: " + reacaoEstresse + "\n\n";
+
+    texto += "*5. CRENÇAS*\n";
+    texto += "• 'Desde criança aprendi que...': " + aprendiQue + "\n";
+    texto += "• 'Eu gostaria que as pessoas...': " + gostariaPessoas + "\n\n";
+
+    texto += "*6. ASPECTOS FÍSICOS*\n";
+    texto += "• Temperatura: " + temperatura + "\n";
+    texto += "• Sono/Intestino: " + sonoIntestino + "\n\n";
+
+    texto += "*7. OBJETIVOS*\n";
+    texto += "• Objetivos: " + objetivos + "\n";
+
+    // =========================================================================
+    // 🟢 COLOQUE SEU WHATSAPP ABAIXO (Abaixo da linha 218 do seu arquivo)
+    // Digite apenas números, com o 55 e o DDD. Exemplo: "5511999998888"
+    // =========================================================================
+    var MEU_NUMERO_WHATSAPP = "5522997120684";
+    // =========================================================================
+
+    var link = "https://wa.me/" + MEU_NUMERO_WHATSAPP + "?text=" + encodeURIComponent(texto);
+    window.open(link, '_blank');
+  }
+</script>
+
+</body>
+</html>
