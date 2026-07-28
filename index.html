@@ -11,22 +11,11 @@
     .section { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #ddd; }
     label { font-weight: bold; display: block; margin-top: 10px; }
     input[type="text"], input[type="date"], select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-    .checkbox-group, .radio-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
-    .checkbox-group label, .radio-group label { font-weight: normal; }
     .btn-submit { background-color: #25d366; color: white; border: none; padding: 15px 25px; font-size: 18px; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px; }
     .btn-submit:hover { background-color: #128c7e; }
   </style>
 </head>
 <body>
-
-<script>
-  // =========================================================================
-  // 🟢 DIGITE O SEU NÚMERO DE WHATSAPP AQUI (Com DDD, apenas números)
-  // Exemplo para São Paulo: "5511999998888"
-  // =========================================================================
-  const SEU_WHATSAPP_TERAPEUTA = "22997120684"; 
-  // =========================================================================
-</script>
 
 <div class="container">
   <h1>ANAMNESE INTEGRATIVA – AVALIAÇÃO INICIAL</h1>
@@ -155,77 +144,79 @@
 
 <script>
   function enviarParaWhatsApp() {
-    // Coleta dos dados do formulário
-    const nome = document.getElementById('nome').value;
-    const dataNasc = document.getElementById('dataNasc').value;
-    const idade = document.getElementById('idade').value;
-    const estadoCivil = document.getElementById('estadoCivil').value;
-    const profissao = document.getElementById('profissao').value;
-    const cidade = document.getElementById('cidade').value;
-    const telPaciente = document.getElementById('telPaciente').value;
-    const queixa = document.getElementById('queixa').value;
-    const tempoSintoma = document.getElementById('tempoSintoma').value;
-    const piora = document.getElementById('piora').value;
-    const melhora = document.getElementById('melhora').value;
-    const expectativa = document.getElementById('expectativa').value;
-    const notaInfancia = document.getElementById('notaInfancia').value;
-    const faltaInfancia = document.getElementById('faltaInfancia').value;
-    const trauma = document.getElementById('trauma').value;
-    const emocaoFrequente = document.getElementById('emocaoFrequente').value;
-    const reacaoEstresse = document.getElementById('reacaoEstresse').value;
-    const aprendiQue = document.getElementById('aprendiQue').value;
-    const gostariaPessoas = document.getElementById('gostariaPessoas').value;
-    const temperatura = document.getElementById('temperatura').value;
-    const sonoIntestino = document.getElementById('sonoIntestino').value;
-    const objetivos = document.getElementById('objetivos').value;
+    // =========================================================================
+    // 🟢 COLOQUE SEU WHATSAPP AQUI NO FINAL DO CÓDIGO
+    // Digite apenas números, com o 55 e o DDD. Exemplo: "5511999998888"
+    // =========================================================================
+    var MEU_NUMERO_WHATSAPP = "5522997120684";
+    // =========================================================================
+
+    var nome = document.getElementById('nome').value;
+    var dataNasc = document.getElementById('dataNasc').value;
+    var idade = document.getElementById('idade').value;
+    var estadoCivil = document.getElementById('estadoCivil').value;
+    var profissao = document.getElementById('profissao').value;
+    var cidade = document.getElementById('cidade').value;
+    var telPaciente = document.getElementById('telPaciente').value;
+    var queixa = document.getElementById('queixa').value;
+    var tempoSintoma = document.getElementById('tempoSintoma').value;
+    var piora = document.getElementById('piora').value;
+    var melhora = document.getElementById('melhora').value;
+    var expectativa = document.getElementById('expectativa').value;
+    var notaInfancia = document.getElementById('notaInfancia').value;
+    var faltaInfancia = document.getElementById('faltaInfancia').value;
+    var trauma = document.getElementById('trauma').value;
+    var emocaoFrequente = document.getElementById('emocaoFrequente').value;
+    var reacaoEstresse = document.getElementById('reacaoEstresse').value;
+    var aprendiQue = document.getElementById('aprendiQue').value;
+    var gostariaPessoas = document.getElementById('gostariaPessoas').value;
+    var temperatura = document.getElementById('temperatura').value;
+    var sonoIntestino = document.getElementById('sonoIntestino').value;
+    var objetivos = document.getElementById('objetivos').value;
 
     if (!nome || !telPaciente) {
-      alert("Por favor, preencha pelo menos o Nome e o WhatsApp antes de enviar.");
+      alert("Por favor, preencha o Nome e o seu WhatsApp antes de enviar.");
       return;
     }
 
-    // Montagem da mensagem formatada para o WhatsApp
-    let mensagem = `*ANAMNESE INTEGRATIVA - RESPOSTAS*\n\n`;
-    mensagem += `*1. DADOS PESSOAIS*\n`;
-    mensagem += `• Nome: ${nome}\n`;
-    mensagem += `• Nasc: ${dataNasc} | Idade: ${idade}\n`;
-    mensagem += `• Estado Civil: ${estadoCivil}\n`;
-    mensagem += `• Profissão: ${profissao}\n`;
-    mensagem += `• Cidade: ${cidade}\n`;
-    mensagem += `• Tel Paciente: ${telPaciente}\n\n`;
+    var texto = "*ANAMNESE INTEGRATIVA - RESPOSTAS*\n\n";
+    texto += "*1. DADOS PESSOAIS*\n";
+    texto += "• Nome: " + nome + "\n";
+    texto += "• Nasc: " + dataNasc + " | Idade: " + idade + "\n";
+    texto += "• Estado Civil: " + estadoCivil + "\n";
+    texto += "• Profissão: " + profissao + "\n";
+    texto += "• Cidade: " + cidade + "\n";
+    texto += "• Tel Paciente: " + telPaciente + "\n\n";
 
-    mensagem += `*2. MOTIVO E SINTOMAS*\n`;
-    mensagem += `• Queixa Principal: ${queixa}\n`;
-    mensagem += `• Tempo de sintoma: ${tempoSintoma}\n`;
-    mensagem += `• Piora com: ${piora}\n`;
-    mensagem += `• Melhora com: ${melhora}\n`;
-    mensagem += `• Expectativa: ${expectativa}\n\n`;
+    texto += "*2. MOTIVO E SINTOMAS*\n";
+    texto += "• Queixa: " + queixa + "\n";
+    texto += "• Tempo: " + tempoSintoma + "\n";
+    texto += "• Piora com: " + piora + "\n";
+    texto += "• Melhora com: " + melhora + "\n";
+    texto += "• Expectativa: " + expectativa + "\n\n";
 
-    mensagem += `*3. HISTÓRIA DE VIDA*\n`;
-    mensagem += `• Nota Infância: ${notaInfancia}\n`;
-    mensagem += `• Falta na infância: ${faltaInfancia}\n`;
-    mensagem += `• Lembrança/Trauma: ${trauma}\n\n`;
+    texto += "*3. HISTÓRIA DE VIDA*\n";
+    texto += "• Nota Infância: " + notaInfancia + "\n";
+    texto += "• Falta na infância: " + faltaInfancia + "\n";
+    texto += "• Lembrança/Trauma: " + trauma + "\n\n";
 
-    mensagem += `*4. FUNCIONAMENTO EMOCIONAL*\n`;
-    mensagem += `• Emoção Frequente: ${emocaoFrequente}\n`;
-    mensagem += `• Reação ao Estresse: ${reacaoEstresse}\n\n`;
+    texto += "*4. FUNCIONAMENTO EMOCIONAL*\n";
+    texto += "• Emoção Frequente: " + emocaoFrequente + "\n";
+    texto += "• Reação ao Estresse: " + reacaoEstresse + "\n\n";
 
-    mensagem += `*5. CRENÇAS*\n`;
-    mensagem += `• "Desde criança aprendi que...": ${aprendiQue}\n`;
-    mensagem += `• "Eu gostaria que as pessoas...": ${gostariaPessoas}\n\n`;
+    texto += "*5. CRENÇAS*\n";
+    texto += "• 'Desde criança aprendi que...': " + aprendiQue + "\n";
+    texto += "• 'Eu gostaria que as pessoas...': " + gostariaPessoas + "\n\n";
 
-    mensagem += `*6. ASPECTOS FÍSICOS*\n`;
-    mensagem += `• Sensibilidade Térmica: ${temperatura}\n`;
-    mensagem += `• Sono/Intestino: ${sonoIntestino}\n\n`;
+    texto += "*6. ASPECTOS FÍSICOS*\n";
+    texto += "• Temperatura: " + temperatura + "\n";
+    texto += "• Sono/Intestino: " + sonoIntestino + "\n\n";
 
-    mensagem += `*7. OBJETIVOS*\n`;
-    mensagem += `• Objetivos 12 meses: ${objetivos}\n`;
+    texto += "*7. OBJETIVOS*\n";
+    texto += "• Objetivos: " + objetivos + "\n";
 
-    // Codifica para URL do WhatsApp
-    const urlWhatsApp = `https://wa.me/${SEU_WHATSAPP_TERAPEUTA}?text=${encodeURIComponent(mensagem)}`;
-
-    // Abre o WhatsApp do paciente com o texto pronto
-    window.open(urlWhatsApp, '_blank');
+    var link = "https://wa.me/" + MEU_NUMERO_WHATSAPP + "?text=" + encodeURIComponent(texto);
+    window.open(link, '_blank');
   }
 </script>
 
