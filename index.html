@@ -479,6 +479,216 @@
     txt += "53. Espera do processo: " + getValue('p53') + "\n";
     txt += "54. Pergunta ao terapeuta: " + getValue('p54') + "\n";
     txt += "55. Informação extra: " + getValue('p55') + "\n";
+    <!-- SEÇÃO 8 -->
+<div class="secao">
+  <h2>SEÇÃO 8 – INVESTIGAÇÃO HOMEOPÁTICA COMPLEMENTAR</h2>
+
+  <!-- 56 -->
+  <label class="rotulo">56. Transpiração:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="transpiracao" value="Pouca"> Pouca</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="transpiracao" value="Moderada"> Moderada</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="transpiracao" value="Intensa"> Intensa</label>
+  </div>
+  <label class="rotulo">Onde?</label>
+  <input type="texto" name="transpiracao_onde">
+  <label class="rotulo">Horário predominante:</label>
+  <input type="texto" name="transpiracao_horario">
+  <label class="rotulo">Cheiro característico?</label>
+  <input type="texto" name="transpiracao_cheiro">
+
+  <!-- 57 -->
+  <label class="rotulo">57. Sensibilidade ao ambiente (Como se sente em ambientes):</label>
+  <label class="subtexto">Fechados:</label>
+  <input type="texto" name="sensibilidade_fechados">
+  <label class="subtexto">Abertos:</label>
+  <input type="texto" name="sensibilidade_abertos">
+  <label class="subtexto">Secos:</label>
+  <input type="texto" name="sensibilidade_secos">
+  <label class="subtexto">Úmidos:</label>
+  <input type="texto" name="sensibilidade_umidos">
+  <label class="subtexto">Com vento:</label>
+  <input type="texto" name="sensibilidade_vento">
+  <label class="subtexto">Com chuva:</label>
+  <input type="texto" name="sensibilidade_chuva">
+
+  <!-- 58 -->
+  <label class="rotulo">58. Preferência de ambiente:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Frio"> Frio</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Quente"> Quente</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Fresco"> Fresco</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Ar livre"> Ar livre</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Ambiente fechado"> Ambiente fechado</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Não percebe diferença"> Não percebe diferença</label>
+  </div>
+
+  <!-- 59 -->
+  <label class="rotulo">59. Posição para dormir:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Barriga para cima"> Barriga para cima</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Barriga para baixo"> Barriga para baixo</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Lado direito"> Lado direito</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Lado esquerdo"> Lado esquerdo</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Muda constantemente"> Muda constantemente</label>
+  </div>
+  <label class="subtexto">Outra:</label>
+  <input type="texto" name="posicao_dormir_outra">
+
+  <!-- 60 -->
+  <label class="rotulo">60. Horário de maior disposição:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Manhã"> Manhã</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Tarde"> Tarde</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Noite"> Noite</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Varia muito"> Varia muito</label>
+  </div>
+  <label class="subtexto">Horário aproximado:</label>
+  <input type="texto" name="disposicao_horario">
+
+  <!-- 61 -->
+  <label class="rotulo">61. Horário de maior indisposição:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Manhã"> Manhã</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Tarde"> Tarde</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Noite"> Noite</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Madrugada"> Madrugada</label>
+  </div>
+  <label class="subtexto">Horário aproximado:</label>
+  <input type="texto" name="indisposicao_horario">
+
+  <!-- 62 -->
+  <label class="rotulo">62. Evacuação:</label>
+  <label class="subtexto">Frequência:</label>
+  <input type="texto" name="evacuacao_frequencia">
+  <label class="subtexto">Horário habitual:</label>
+  <input type="texto" name="evacuacao_horario">
+  <label class="subtexto">Características que considera incomuns:</label>
+  <textarea name="evacuacao_incomuns"></textarea>
+
+  <!-- 63 -->
+  <label class="rotulo">63. Gases e distensão abdominal:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="gases" value="Não"> Não</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="gases" value="Sim"> Sim</label>
+  </div>
+  <label class="subtexto">Piora quando?</label>
+  <input type="texto" name="gases_piora">
+  <label class="subtexto">Melhora quando?</label>
+  <input type="texto" name="gases_melhora">
+
+  <!-- 64 -->
+  <label class="rotulo">64. Urina:</label>
+  <label class="subtexto">Frequência habitual:</label>
+  <input type="texto" name="urina_frequencia">
+  <label class="subtexto">Acorda à noite para urinar?</label>
+  <input type="texto" name="urina_noite">
+  <label class="subtexto">Há alguma característica urinária que considere incomum?</label>
+  <textarea name="urina_incomun"></textarea>
+
+  <!-- 65 -->
+  <label class="rotulo">65. Sensibilidade física (É especialmente sensível a):</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Dor"> Dor</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Ruídos"> Ruídos</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Luz"> Luz</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Cheiros"> Cheiros</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Toque"> Toque</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Pressão"> Pressão</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Temperatura"> Temperatura</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Nenhum desses"> Nenhum desses</label>
+  </div>
+
+  <!-- 66 -->
+  <label class="rotulo">66. Reação à dor (Quando sente dor, tende a):</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Ficar irritado(a)"> Ficar irritado(a)</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Ficar ansioso(a)"> Ficar ansioso(a)</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Ficar quieto(a)"> Ficar quieto(a)</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Procurar companhia"> Procurar companhia</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Preferir ficar sozinho(a)"> Preferir ficar sozinho(a)</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Precisar se movimentar"> Precisar se movimentar</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Precisar ficar imóvel"> Precisar ficar imóvel</label>
+  </div>
+  <label class="subtexto">Outra:</label>
+  <input type="texto" name="reacao_dor_outra">
+
+  <!-- 67 -->
+  <label class="rotulo">67. Reação a mudanças:</label>
+  <label class="subtexto">Como reage normalmente a mudanças inesperadas?</label>
+  <textarea name="reacao_mudancas"></textarea>
+
+  <!-- 68 -->
+  <label class="rotulo">68. Reação quando contrariado(a):</label>
+  <label class="subtexto">O que acontece primeiro?</label>
+  <textarea name="reacao_contrariado"></textarea>
+
+  <!-- 69 -->
+  <label class="rotulo">69. Reação quando é injustiçado(a):</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Confronto imediatamente"> Confronto imediatamente</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Fico em silêncio"> Fico em silêncio</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Fico com raiva"> Fico com raiva</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Fico triste"> Fico triste</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Guardo ressentimento"> Guardo ressentimento</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Tento esquecer"> Tento esquecer</label>
+  </div>
+  <label class="subtexto">Outra:</label>
+  <input type="texto" name="reacao_injustica_outra">
+
+  <!-- 70 -->
+  <label class="rotulo">70. Reação quando perde algo ou alguém importante:</label>
+  <label class="subtexto">Como costuma vivenciar a perda?</label>
+  <textarea name="reacao_perda"></textarea>
+
+  <!-- 71 -->
+  <label class="rotulo">71. Companhia (Quando está emocionalmente mal, prefere):</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Ficar sozinho(a)"> Ficar sozinho(a)</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Ter alguém próximo"> Ter alguém próximo</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Conversar muito"> Conversar muito</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Apenas ter alguém por perto, sem conversar"> Apenas ter alguém por perto, sem conversar</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Depende da situação"> Depende da situação</label>
+  </div>
+
+  <!-- 72 -->
+  <label class="rotulo">72. Choro:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Choro facilmente"> Choro facilmente</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Tenho dificuldade para chorar"> Tenho dificuldade para chorar</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Choro somente sozinho(a)"> Choro somente sozinho(a)</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Choro quando alguém me acolhe"> Choro quando alguém me acolhe</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Raramente choro"> Raramente choro</label>
+  </div>
+
+  <!-- 73 -->
+  <label class="rotulo">73. Raiva (Quando sente raiva, normalmente):</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Demonstro imediatamente"> Demonstro imediatamente</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Reprimo"> Reprimo</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Fico em silêncio"> Fico em silêncio</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Choro"> Choro</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Grito"> Grito</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Me afasto"> Me afasto</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Fico pensando no acontecimento por muito tempo"> Fico pensando no acontecimento por muito tempo</label>
+  </div>
+  <label class="subtexto">Outra:</label>
+  <input type="texto" name="raiva_outra">
+
+  <!-- 74 -->
+  <label class="rotulo">74. Sensação predominante após uma discussão:</label>
+  <div class="grupo-de-caixas-de-selecao">
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Alívio"> Alívio</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Culpa"> Culpa</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Raiva"> Raiva</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Tristeza"> Tristeza</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Vergonha"> Vergonha</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Medo"> Medo</label>
+    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Fico pensando no assunto por muito tempo"> Fico pensando no assunto por muito tempo</label>
+  </div>
+  <label class="subtexto">Outra:</label>
+  <input type="texto" name="pos_discussao_outra">
+</div>
 
     // =========================================================================
     // 🟢 COLOQUE SEU NUMERO DE WHATSAPP COM DDD (Apenas Números)
