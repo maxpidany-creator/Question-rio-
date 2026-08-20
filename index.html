@@ -1,705 +1,135 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anamnese Integrativa – Avaliação Inicial</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 15px; background-color: #f4f7f6; color: #333; line-height: 1.5; }
-    .container { max-width: 800px; background: #fff; margin: auto; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #2c3e50; }
-    h1 { font-size: 22px; text-align: center; margin-bottom: 5px; }
-    .subtitle { text-align: center; font-size: 13px; font-weight: bold; margin-bottom: 15px; color: #555; }
-    h2 { font-size: 16px; margin-top: 25px; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; text-transform: uppercase; }
-    .section { margin-bottom: 20px; }
-    label { font-weight: bold; display: block; margin-top: 14px; font-size: 14px; color: #222; }
-    .subtext { font-weight: normal; font-size: 12px; color: #666; margin-bottom: 6px; }
-    input[type="text"], input[type="date"], select, textarea { width: 100%; padding: 9px; margin-top: 4px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
-    .checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; background: #f9f9f9; padding: 10px; border-radius: 5px; }
-    .checkbox-item { font-size: 13px; display: flex; align-items: center; gap: 5px; min-width: 45%; }
-    .scale-box { display: flex; align-items: center; justify-content: space-between; background: #f9f9f9; padding: 8px; border-radius: 5px; margin-top: 4px; }
-    .scale-box label { font-weight: normal; margin-top: 0; font-size: 13px; }
-    .btn-submit { background-color: #25d366; color: white; border: none; padding: 16px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 30px; }
-    .btn-submit:hover { background-color: #128c7e; }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h1>ANAMNESE INTEGRATIVA – AVALIAÇÃO INICIAL</h1>
-  <div class="subtitle">Psicoterapia Integrativa • Homeopatia • Planejamento Terapêutico</div>
-  
-  <p style="font-size:13px; background:#eef6f7; padding:12px; border-radius:5px; border-left:4px solid #2c3e50;">
-    <strong>Bem-vindo(a)!</strong> Este formulário tem como objetivo conhecer sua história de vida, seus aspectos emocionais, sintomas físicos e características individuais para que o processo terapêutico seja planejado de forma personalizada.<br><br>
-    Algumas perguntas podem despertar lembranças importantes. Caso alguma questão cause desconforto, você poderá deixá-la sem resposta e conversar sobre ela durante a consulta.<br><br>
-    ⏱️ <strong>Tempo aproximado de preenchimento:</strong> 20 minutos.
-  </p>
-
-  <form id="anamneseForm">
-    
-    <!-- SEÇÃO 1 -->
-    <div class="section">
-      <h2>SEÇÃO 1 – DADOS PESSOAIS</h2>
-      <label>Nome completo:</label>
-      <input type="text" id="p_nome" required />
-
-      <label>Idade:</label>
-      <input type="text" id="p_idade" />
-
-      <label>Data de nascimento:</label>
-      <input type="date" id="p_dataNasc" />
-
-      <label>Estado civil:</label>
-      <select id="p_estadoCivil">
-        <option value="">Selecione...</option>
-        <option value="Solteiro(a)">Solteiro(a)</option>
-        <option value="Casado(a)">Casado(a)</option>
-        <option value="União estável">União estável</option>
-        <option value="Divorciado(a)">Divorciado(a)</option>
-        <option value="Viúvo(a)">Viúvo(a)</option>
-      </select>
-
-      <label>Profissão:</label>
-      <input type="text" id="p_profissao" />
-
-      <label>Cidade onde mora:</label>
-      <input type="text" id="p_cidade" />
-
-      <label>Telefone / WhatsApp (com DDD):</label>
-      <input type="text" id="p_telefone" required />
-    </div>
-
-    <!-- SEÇÃO 2 -->
-    <div class="section">
-      <h2>SEÇÃO 2 – MOTIVO DA CONSULTA</h2>
-      <label>1. O que trouxe você para o tratamento neste momento?</label>
-      <textarea id="p1" rows="3"></textarea>
-
-      <label>2. Qual é a principal dificuldade que você enfrenta atualmente?</label>
-      <textarea id="p2" rows="3"></textarea>
-
-      <label>3. Há quanto tempo esse problema existe?</label>
-      <input type="text" id="p3" />
-
-      <label>4. Você percebeu algum acontecimento ou período da vida em que esse problema começou ou piorou?</label>
-      <textarea id="p4" rows="2"></textarea>
-
-      <label>5. O que costuma piorar seus sintomas físicos?</label>
-      <textarea id="p5" rows="2"></textarea>
-
-      <label>6. O que costuma piorar seu sofrimento emocional?</label>
-      <textarea id="p6" rows="2"></textarea>
-
-      <label>7. O que costuma aliviar ou melhorar seus sintomas?</label>
-      <textarea id="p7" rows="2"></textarea>
-
-      <label>8. Já realizou algum tratamento anteriormente? Qual foi o resultado?</label>
-      <textarea id="p8" rows="2"></textarea>
-
-      <label>9. O que você espera alcançar com este tratamento?</label>
-      <textarea id="p9" rows="2"></textarea>
-    </div>
-
-    <!-- SEÇÃO 3 -->
-    <div class="section">
-      <h2>SEÇÃO 3 – HISTÓRIA DE VIDA</h2>
-      <label>10. Como você descreveria sua infância?</label>
-      <textarea id="p10" rows="2"></textarea>
-
-      <label>11. Como você se sentia na presença da sua mãe?</label>
-      <textarea id="p11" rows="2"></textarea>
-
-      <label>12. Como você se sentia na presença do seu pai?</label>
-      <textarea id="p12" rows="2"></textarea>
-
-      <label>13. Quando criança, do que você mais sentia falta?</label>
-      <textarea id="p13" rows="2"></textarea>
-
-      <label>14. Existe alguma lembrança da infância que ainda influencia sua vida atualmente? (opcional)</label>
-      <textarea id="p14" rows="2"></textarea>
-
-      <label>15. Qual foi um dos momentos mais difíceis da sua vida? (opcional)</label>
-      <textarea id="p15" rows="2"></textarea>
-
-      <label>16. Existe alguma experiência que você sente que ainda precisa superar?</label>
-      <textarea id="p16" rows="2"></textarea>
-    </div>
-
-    <!-- SEÇÃO 4 -->
-    <div class="section">
-      <h2>SEÇÃO 4 – FUNCIONAMENTO EMOCIONAL</h2>
-      <div class="subtext">Escala: 1 = Nunca | 5 = Sempre</div>
-      
-      <label>17. Consigo identificar aquilo que estou sentindo:</label>
-      <select id="p17"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>18. Sou muito crítico(a) comigo mesmo(a):</label>
-      <select id="p18"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>19. Tenho dificuldade para pedir ajuda:</label>
-      <select id="p19"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>20. Evito conflitos para não desagradar as pessoas:</label>
-      <select id="p20"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>21. Tenho medo de decepcionar as pessoas:</label>
-      <select id="p21"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>22. Costumo colocar as necessidades dos outros acima das minhas:</label>
-      <select id="p22"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>23. Tenho dificuldade para confiar nas pessoas:</label>
-      <select id="p23"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>24. Tenho dificuldade para relaxar e aproveitar momentos bons:</label>
-      <select id="p24"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>25. Quando erro, continuo me culpando por muito tempo:</label>
-      <select id="p25"><option value="">Selecione...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-
-      <label>26. Quando estou sofrendo emocionalmente, o que normalmente faço?</label>
-      <div class="checkbox-group">
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Procuro alguém para conversar"> Procuro alguém para conversar</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Fico sozinho(a)"> Fico sozinho(a)</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Choro"> Choro</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Como mais que o habitual"> Como mais que o habitual</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Durmo ou tento dormir"> Durmo ou tento dormir</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Trabalho mais"> Trabalho mais</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Uso álcool ou outra substância"> Uso álcool/substância</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Assisto filmes ou séries"> Assisto filmes ou séries</div>
-        <div class="checkbox-item"><input type="checkbox" name="p26" value="Fico na internet/redes sociais"> Redes sociais/internet</div>
-      </div>
-      <input type="text" id="p26_outro" placeholder="Outro..." style="margin-top:5px;" />
-
-      <label>27. Quando estou sob pressão, normalmente eu:</label>
-      <div class="checkbox-group">
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Fico irritado(a)"> Fico irritado(a)</div>
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Fico ansioso(a)"> Fico ansioso(a)</div>
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Choro"> Choro</div>
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Me isolo"> Me isolo</div>
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Tento controlar tudo"> Tento controlar tudo</div>
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Como mais"> Como mais</div>
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Perco o apetite"> Perco o apetite</div>
-        <div class="checkbox-item"><input type="checkbox" name="p27" value="Dificuldade para dormir"> Dificuldade para dormir</div>
-      </div>
-      <input type="text" id="p27_outro" placeholder="Outro..." style="margin-top:5px;" />
-
-      <label>28. Qual emoção aparece com mais frequência na sua vida?</label>
-      <select id="p28">
-        <option value="">Selecione...</option>
-        <option value="Ansiedade">Ansiedade</option>
-        <option value="Tristeza">Tristeza</option>
-        <option value="Raiva">Raiva</option>
-        <option value="Culpa">Culpa</option>
-        <option value="Vergonha">Vergonha</option>
-        <option value="Medo">Medo</option>
-        <option value="Solidão">Solidão</option>
-        <option value="Sensação de vazio">Sensação de vazio</option>
-        <option value="Outra">Outra</option>
-      </select>
-
-      <label>29. Quando alguém critica você, o que acontece primeiro?</label>
-      <select id="p29">
-        <option value="">Selecione...</option>
-        <option value="Fico triste">Fico triste</option>
-        <option value="Fico com raiva">Fico com raiva</option>
-        <option value="Tento me justificar">Tento me justificar</option>
-        <option value="Fico em silêncio">Fico em silêncio</option>
-        <option value="Concordo mesmo sem concordar">Concordo mesmo sem concordar</option>
-        <option value="Outro">Outro</option>
-      </select>
-
-      <label>30. Quando está sofrendo emocionalmente, o que costuma dizer para si mesmo(a)?</label>
-      <textarea id="p30" rows="2"></textarea>
-    </div>
-
-    <!-- SEÇÃO 5 -->
-    <div class="section">
-      <h2>SEÇÃO 5 – CRENÇAS E PADRÕES PESSOAIS</h2>
-      <label>31. Complete espontaneamente: "Desde criança eu aprendi que..."</label>
-      <textarea id="p31" rows="2"></textarea>
-
-      <label>32. Complete espontaneamente: "Eu gostaria que as pessoas..."</label>
-      <textarea id="p32" rows="2"></textarea>
-
-      <label>33. Se pudesse mudar uma característica sua, qual seria?</label>
-      <textarea id="p33" rows="2"></textarea>
-
-      <label>34. O que faz você se sentir verdadeiramente amado(a)?</label>
-      <textarea id="p34" rows="2"></textarea>
-
-      <label>35. O que faz você se sentir profundamente magoado(a)?</label>
-      <textarea id="p35" rows="2"></textarea>
-
-      <label>36. Existe alguma situação que você evita por medo, vergonha ou insegurança?</label>
-      <textarea id="p36" rows="2"></textarea>
-    </div>
-
-    <!-- SEÇÃO 6 -->
-    <div class="section">
-      <h2>SEÇÃO 6 – ASPECTOS FÍSICOS E INDIVIDUALIZAÇÃO</h2>
-      <label>37. Você se considera uma pessoa:</label>
-      <select id="p37">
-        <option value="">Selecione...</option>
-        <option value="Muito calorenta">Muito calorenta</option>
-        <option value="Mais calorenta">Mais calorenta</option>
-        <option value="Normal">Normal</option>
-        <option value="Mais friorenta">Mais friorenta</option>
-        <option value="Muito friorenta">Muito friorenta</option>
-      </select>
-
-      <label>38. Seus sintomas pioram com:</label>
-      <div class="checkbox-group">
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Frio"> Frio</div>
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Calor"> Calor</div>
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Movimento"> Movimento</div>
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Repouso"> Repouso</div>
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Estresse"> Estresse</div>
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Contrariedades"> Contrariedades</div>
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Falta de sono"> Falta de sono</div>
-        <div class="checkbox-item"><input type="checkbox" name="p38" value="Umidade"> Umidade</div>
-      </div>
-
-      <label>39. Seus sintomas melhoram com:</label>
-      <div class="checkbox-group">
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Calor"> Calor</div>
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Frio"> Frio</div>
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Movimento"> Movimento</div>
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Repouso"> Repouso</div>
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Sono"> Sono</div>
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Alimentação"> Alimentação</div>
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Banho quente"> Banho quente</div>
-        <div class="checkbox-item"><input type="checkbox" name="p39" value="Banho frio"> Banho frio</div>
-      </div>
-
-      <label>40. Como é seu apetite?</label>
-      <select id="p40">
-        <option value="">Selecione...</option>
-        <option value="Muito aumentado">Muito aumentado</option>
-        <option value="Normal">Normal</option>
-        <option value="Pouco">Pouco</option>
-        <option value="Oscila bastante">Oscila bastante</option>
-      </select>
-
-      <label>41. Como é sua sede?</label>
-      <select id="p41">
-        <option value="">Selecione...</option>
-        <option value="Pouca">Pouca</option>
-        <option value="Normal">Normal</option>
-        <option value="Muita">Muita</option>
-      </select>
-
-      <label>42. Quais alimentos você sente mais desejo?</label>
-      <div class="checkbox-group">
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Doces"> Doces</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Chocolate"> Chocolate</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Salgados"> Salgados</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Café"> Café</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Queijos"> Queijos</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Leite"> Leite</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Carne"> Carne</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Frutas"> Frutas</div>
-        <div class="checkbox-item"><input type="checkbox" name="p42" value="Ovos"> Ovos</div>
-      </div>
-      <input type="text" id="p42_outro" placeholder="Outro..." style="margin-top:5px;" />
-
-      <label>43. Existe algum alimento que você não suporta ou evita?</label>
-      <input type="text" id="p43" />
-
-      <label>44. Você costuma comer quando está ansioso(a), triste ou nervoso(a)?</label>
-      <select id="p44">
-        <option value="">Selecione...</option>
-        <option value="Nunca">Nunca</option>
-        <option value="Raramente">Raramente</option>
-        <option value="Às vezes">Às vezes</option>
-        <option value="Frequentemente">Frequentemente</option>
-      </select>
-
-      <label>45. Como funciona seu intestino?</label>
-      <select id="p45">
-        <option value="">Selecione...</option>
-        <option value="Regular">Regular</option>
-        <option value="Prisão de ventre">Prisão de ventre</option>
-        <option value="Diarreia">Diarreia</option>
-        <option value="Alterna entre os dois">Alterna entre os dois</option>
-      </select>
-
-      <label>46. Como é seu sono?</label>
-      <div class="checkbox-group">
-        <div class="checkbox-item"><input type="checkbox" name="p46" value="Durmo facilmente"> Durmo facilmente</div>
-        <div class="checkbox-item"><input type="checkbox" name="p46" value="Demoro para dormir"> Demoro para dormir</div>
-        <div class="checkbox-item"><input type="checkbox" name="p46" value="Acordo durante a noite"> Acordo durante a noite</div>
-        <div class="checkbox-item"><input type="checkbox" name="p46" value="Sono leve"> Sono leve</div>
-        <div class="checkbox-item"><input type="checkbox" name="p46" value="Sono profundo"> Sono profundo</div>
-        <div class="checkbox-item"><input type="checkbox" name="p46" value="Pesadelos"> Pesadelos</div>
-        <div class="checkbox-item"><input type="checkbox" name="p46" value="Sonhos intensos"> Sonhos intensos</div>
-      </div>
-
-      <label>47. Ao acordar normalmente você se sente:</label>
-      <select id="p47">
-        <option value="">Selecione...</option>
-        <option value="Muito disposto(a)">Muito disposto(a)</option>
-        <option value="Disposto(a)">Disposto(a)</option>
-        <option value="Cansado(a)">Cansado(a)</option>
-        <option value="Muito cansado(a)">Muito cansado(a)</option>
-      </select>
-
-      <label>48. Usa medicamentos continuamente? Quais?</label>
-      <textarea id="p48" rows="2"></textarea>
-
-      <label>49. Possui algum diagnóstico ou problema de saúde?</label>
-      <textarea id="p49" rows="2"></textarea>
-    </div>
-
-    <!-- SEÇÃO 7 -->
-    <div class="section">
-      <h2>SEÇÃO 7 – OBJETIVOS TERAPÊUTICOS</h2>
-      <label>50. Qual é seu maior medo atualmente?</label>
-      <textarea id="p50" rows="2"></textarea>
-
-      <label>51. Se pudesse aliviar o impacto emocional de uma lembrança da sua vida, qual seria? (opcional)</label>
-      <textarea id="p51" rows="2"></textarea>
-
-      <label>52. Quais são seus três principais objetivos para os próximos 12 meses?</label>
-      <textarea id="p52" rows="3"></textarea>
-
-      <label>53. O que espera encontrar neste processo terapêutico?</label>
-      <textarea id="p53" rows="2"></textarea>
-
-      <label>54. Se você pudesse fazer apenas uma pergunta ao seu terapeuta antes da primeira consulta, qual seria?</label>
-      <textarea id="p54" rows="2"></textarea>
-
-      <label>55. Existe alguma informação importante sobre você que eu não perguntei e que gostaria que eu soubesse?</label>
-      <textarea id="p55" rows="2"></textarea>
-    </div>
-
-    <button type="button" class="btn-submit" onclick="enviarParaWhatsApp()">📲 Enviar Formulário pelo WhatsApp</button>
-  </form>
-</div>
-
 <script>
-  function getCheckboxes(name, outroId) {
-    var checkboxes = document.querySelectorAll('input[name="' + name + '"]:checked');
-    var values = Array.from(checkboxes).map(cb => cb.value);
-    if (outroId) {
-      var outroVal = document.getElementById(outroId).value.trim();
-      if (outroVal) values.push("Outro: " + outroVal);
-    }
-    return values.length > 0 ? values.join(", ") : "Não informado";
-  }
+  document.getElementById('anamneseForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  function getValue(id) {
-    var el = document.getElementById(id);
-    return el && el.value.trim() ? el.value.trim() : "Não informado";
-  }
-
-  function enviarParaWhatsApp() {
-    var nome = getValue('p_nome');
-    var telefone = getValue('p_telefone');
-
-    if (nome === "Não informado" || telefone === "Não informado") {
-      alert("Por favor, preencha pelo menos o seu Nome e Telefone/WhatsApp antes de enviar.");
-      return;
+    function getCheckboxes(name) {
+      const el = document.querySelectorAll(`input[name="${name}"]:checked`);
+      let values = [];
+      el.forEach(item => values.push(item.value));
+      return values.join(', ') || 'Não informado';
     }
 
-    var txt = "*ANAMNESE INTEGRATIVA - COMPLETA (55 PERGUNTAS)*\n\n";
+    function getValue(id) {
+      return document.getElementById(id) ? document.getElementById(id).value || 'Não informado' : 'Não informado';
+    }
+
+    let texto = `*ANAMNESE INTEGRATIVA COMPLETA*\n\n`;
     
-    txt += "*SEÇÃO 1 – DADOS PESSOAIS*\n";
-    txt += "• Nome: " + nome + "\n";
-    txt += "• Idade: " + getValue('p_idade') + "\n";
-    txt += "• Nasc: " + getValue('p_dataNasc') + "\n";
-    txt += "• Estado Civil: " + getValue('p_estadoCivil') + "\n";
-    txt += "• Profissão: " + getValue('p_profissao') + "\n";
-    txt += "• Cidade: " + getValue('p_cidade') + "\n";
-    txt += "• Tel: " + telefone + "\n\n";
+    texto += `*DADOS PESSOAIS*\n`;
+    texto += `• Nome: ${getValue('p_nome')}\n`;
+    texto += `• Idade: ${getValue('p_idade')}\n`;
+    texto += `• Nascimento: ${getValue('p_dataNasc')}\n`;
+    texto += `• Estado Civil: ${getValue('p_estadoCivil')}\n`;
+    texto += `• Profissão: ${getValue('p_profissao')}\n`;
+    texto += `• Cidade: ${getValue('p_cidade')}\n`;
+    texto += `• Telefone: ${getValue('p_telefone')}\n\n`;
 
-    txt += "*SEÇÃO 2 – MOTIVO DA CONSULTA*\n";
-    txt += "1. Motivo: " + getValue('p1') + "\n";
-    txt += "2. Dificuldade principal: " + getValue('p2') + "\n";
-    txt += "3. Tempo: " + getValue('p3') + "\n";
-    txt += "4. Início/Piora: " + getValue('p4') + "\n";
-    txt += "5. Piora físico: " + getValue('p5') + "\n";
-    txt += "6. Piora emocional: " + getValue('p6') + "\n";
-    txt += "7. Alivia/Melhora: " + getValue('p7') + "\n";
-    txt += "8. Tratamentos anteriores: " + getValue('p8') + "\n";
-    txt += "9. Expectativa: " + getValue('p9') + "\n\n";
+    texto += `*MOTIVO DA CONSULTA*\n`;
+    texto += `1. Motivo: ${getValue('p1')}\n`;
+    texto += `2. Principal Dificuldade: ${getValue('p2')}\n`;
+    texto += `3. Tempo do problema: ${getValue('p3')}\n`;
+    texto += `4. Início/Piora: ${getValue('p4')}\n`;
+    texto += `5. Piora físico: ${getValue('p5')}\n`;
+    texto += `6. Piora emocional: ${getValue('p6')}\n`;
+    texto += `7. Alívio: ${getValue('p7')}\n`;
+    texto += `8. Tratamentos anteriores: ${getValue('p8')}\n`;
+    texto += `9. Expectativas: ${getValue('p9')}\n\n`;
 
-    txt += "*SEÇÃO 3 – HISTÓRIA DE VIDA*\n";
-    txt += "10. Infância: " + getValue('p10') + "\n";
-    txt += "11. Com a mãe: " + getValue('p11') + "\n";
-    txt += "12. Com o pai: " + getValue('p12') + "\n";
-    txt += "13. Falta na infância: " + getValue('p13') + "\n";
-    txt += "14. Lembrança infância: " + getValue('p14') + "\n";
-    txt += "15. Momento difícil: " + getValue('p15') + "\n";
-    txt += "16. Experiência a superar: " + getValue('p16') + "\n\n";
+    texto += `*HISTÓRIA DE VIDA*\n`;
+    texto += `10. Infância: ${getValue('p10')}\n`;
+    texto += `11. Com a mãe: ${getValue('p11')}\n`;
+    texto += `12. Com o pai: ${getValue('p12')}\n`;
+    texto += `13. Falta na infância: ${getValue('p13')}\n`;
+    texto += `14. Lembrança marcante: ${getValue('p14')}\n`;
+    texto += `15. Momento difícil: ${getValue('p15')}\n`;
+    texto += `16. A superar: ${getValue('p16')}\n\n`;
 
-    txt += "*SEÇÃO 4 – FUNCIONAMENTO EMOCIONAL*\n";
-    txt += "17. Identifica sentimentos (1-5): " + getValue('p17') + "\n";
-    txt += "18. Autocrítico(a) (1-5): " + getValue('p18') + "\n";
-    txt += "19. Pedir ajuda (1-5): " + getValue('p19') + "\n";
-    txt += "20. Evita conflitos (1-5): " + getValue('p20') + "\n";
-    txt += "21. Medo de decepcionar (1-5): " + getValue('p21') + "\n";
-    txt += "22. Outros acima de si (1-5): " + getValue('p22') + "\n";
-    txt += "23. Dificuldade de confiar (1-5): " + getValue('p23') + "\n";
-    txt += "24. Dificuldade de relaxar (1-5): " + getValue('p24') + "\n";
-    txt += "25. Se culpa por erros (1-5): " + getValue('p25') + "\n";
-    txt += "26. Ao sofrer emocionalmente: " + getCheckboxes('p26', 'p26_outro') + "\n";
-    txt += "27. Sob pressão: " + getCheckboxes('p27', 'p27_outro') + "\n";
-    txt += "28. Emoção frequente: " + getValue('p28') + "\n";
-    txt += "29. Reação a críticas: " + getValue('p29') + "\n";
-    txt += "30. O que diz a si mesmo(a): " + getValue('p30') + "\n\n";
+    texto += `*FUNCIONAMENTO EMOCIONAL*\n`;
+    texto += `17. Identifica sentimentos (1-5): ${getValue('p17')}\n`;
+    texto += `18. Autocrítico(a) (1-5): ${getValue('p18')}\n`;
+    texto += `19. Dificuldade de pedir ajuda (1-5): ${getValue('p19')}\n`;
+    texto += `20. Evita conflitos (1-5): ${getValue('p20')}\n`;
+    texto += `21. Medo de decepcionar (1-5): ${getValue('p21')}\n`;
+    texto += `22. Outros acima de si (1-5): ${getValue('p22')}\n`;
+    texto += `23. Dificuldade de confiar (1-5): ${getValue('p23')}\n`;
+    texto += `24. Dificuldade para relaxar (1-5): ${getValue('p24')}\n`;
+    texto += `25. Se culpa após erro (1-5): ${getValue('p25')}\n`;
+    texto += `26. Reação ao sofrimento: ${getCheckboxes('p26')} | Outro: ${getValue('p26_outro')}\n`;
+    texto += `27. Sob pressão: ${getCheckboxes('p27')} | Outro: ${getValue('p27_outro')}\n`;
+    texto += `28. Emoção frequente: ${getValue('p28')}\n`;
+    texto += `29. Ao ser criticado(a): ${getValue('p29')}\n`;
+    texto += `30. O que diz a si mesmo(a): ${getValue('p30')}\n\n`;
 
-    txt += "*SEÇÃO 5 – CRENÇAS E PADRÕES*\n";
-    txt += "31. 'Desde criança aprendi que...': " + getValue('p31') + "\n";
-    txt += "32. 'Gostaria que as pessoas...': " + getValue('p32') + "\n";
-    txt += "33. Mudar característica: " + getValue('p33') + "\n";
-    txt += "34. Sente-se amado(a): " + getValue('p34') + "\n";
-    txt += "35. Sente-se magoado(a): " + getValue('p35') + "\n";
-    txt += "36. Evita por medo/vergonha: " + getValue('p36') + "\n\n";
+    texto += `*CRENÇAS E PADRÕES PESSOAIS*\n`;
+    texto += `31. Aprendi desde criança: ${getValue('p31')}\n`;
+    texto += `32. Gostaria que as pessoas: ${getValue('p32')}\n`;
+    texto += `33. O que mudaria em si: ${getValue('p33')}\n`;
+    texto += `34. Sentir-se amado(a): ${getValue('p34')}\n`;
+    texto += `35. Sentir-se magoado(a): ${getValue('p35')}\n`;
+    texto += `36. Situação que evita: ${getValue('p36')}\n\n`;
 
-    txt += "*SEÇÃO 6 – ASPECTOS FÍSICOS*\n";
-    txt += "37. Temperatura: " + getValue('p37') + "\n";
-    txt += "38. Sintomas pioram com: " + getCheckboxes('p38') + "\n";
-    txt += "39. Sintomas melhoram com: " + getCheckboxes('p39') + "\n";
-    txt += "40. Apetite: " + getValue('p40') + "\n";
-    txt += "41. Sede: " + getValue('p41') + "\n";
-    txt += "42. Desejo alimentar: " + getCheckboxes('p42', 'p42_outro') + "\n";
-    txt += "43. Não suporta/evita comer: " + getValue('p43') + "\n";
-    txt += "44. Come por ansiedade/tristeza: " + getValue('p44') + "\n";
-    txt += "45. Intestino: " + getValue('p45') + "\n";
-    txt += "46. Sono: " + getCheckboxes('p46') + "\n";
-    txt += "47. Ao acordar: " + getValue('p47') + "\n";
-    txt += "48. Medicamentos: " + getValue('p48') + "\n";
-    txt += "49. Diagnósticos médicos: " + getValue('p49') + "\n\n";
+    texto += `*ASPECTOS FÍSICOS E INDIVIDUALIZAÇÃO*\n`;
+    texto += `37. Sensibilidade térmica: ${getValue('p37')}\n`;
+    texto += `38. Piora com: ${getCheckboxes('p38')}\n`;
+    texto += `39. Melhora com: ${getCheckboxes('p39')}\n`;
+    texto += `40. Apetite: ${getValue('p40')}\n`;
+    texto += `41. Sede: ${getValue('p41')}\n`;
+    texto += `42. Desejo alimentar: ${getCheckboxes('p42')} | Outro: ${getValue('p42_outro')}\n`;
+    texto += `43. Aversão alimentar: ${getValue('p43')}\n`;
+    texto += `44. Come por ansiedade/emoção: ${getValue('p44')}\n`;
+    texto += `45. Intestino: ${getValue('p45')}\n`;
+    texto += `46. Sono: ${getCheckboxes('p46')}\n`;
+    texto += `47. Ao acordar: ${getValue('p47')}\n`;
+    texto += `48. Medicamentos contínuos: ${getValue('p48')}\n`;
+    texto += `49. Diagnósticos de saúde: ${getValue('p49')}\n\n`;
 
-    txt += "*SEÇÃO 7 – OBJETIVOS TERAPÊUTICOS*\n";
-    txt += "50. Maior medo: " + getValue('p50') + "\n";
-    txt += "51. Aliviar lembrança: " + getValue('p51') + "\n";
-    txt += "52. Objetivos 12 meses: " + getValue('p52') + "\n";
-    txt += "53. Espera do processo: " + getValue('p53') + "\n";
-    txt += "54. Pergunta ao terapeuta: " + getValue('p54') + "\n";
-    txt += "55. Informação extra: " + getValue('p55') + "\n";
-    <!-- SEÇÃO 8 -->
-<div class="secao">
-  <h2>SEÇÃO 8 – INVESTIGAÇÃO HOMEOPÁTICA COMPLEMENTAR</h2>
+    texto += `*OBJETIVOS TERAPÊUTICOS*\n`;
+    texto += `50. Maior medo: ${getValue('p50')}\n`;
+    texto += `51. Lembrança a aliviar: ${getValue('p51')}\n`;
+    texto += `52. Objetivos 12 meses: ${getValue('p52')}\n`;
+    texto += `53. Transformação desejada: ${getValue('p53')}\n`;
+    texto += `54. Algo importante a saber: ${getValue('p54')}\n`;
+    texto += `55. Comprometimento (0-10): ${getValue('p55')}\n\n`;
 
-  <!-- 56 -->
-  <label class="rotulo">56. Transpiração:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="transpiracao" value="Pouca"> Pouca</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="transpiracao" value="Moderada"> Moderada</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="transpiracao" value="Intensa"> Intensa</label>
-  </div>
-  <label class="rotulo">Onde?</label>
-  <input type="texto" name="transpiracao_onde">
-  <label class="rotulo">Horário predominante:</label>
-  <input type="texto" name="transpiracao_horario">
-  <label class="rotulo">Cheiro característico?</label>
-  <input type="texto" name="transpiracao_cheiro">
+    texto += `*INVESTIGAÇÃO HOMEOPÁTICA COMPLEMENTAR*\n`;
+    texto += `56. Transpiração: ${getCheckboxes('p56')} | Onde: ${getValue('p56_onde')} | Horário: ${getValue('p56_horario')} | Cheiro: ${getValue('p56_cheiro')}\n`;
+    texto += `57. Sensibilidade ambiente:\n`;
+    texto += `   - Fechados: ${getValue('p57_fechados')}\n`;
+    texto += `   - Abertos: ${getValue('p57_abertos')}\n`;
+    texto += `   - Secos: ${getValue('p57_secos')}\n`;
+    texto += `   - Úmidos: ${getValue('p57_umidos')}\n`;
+    texto += `   - Vento: ${getValue('p57_vento')}\n`;
+    texto += `   - Chuva: ${getValue('p57_chuva')}\n`;
+    texto += `58. Preferência ambiente: ${getCheckboxes('p58')}\n`;
+    texto += `59. Posição dormir: ${getCheckboxes('p59')} | Outra: ${getValue('p59_outra')}\n`;
+    texto += `60. Maior disposição: ${getCheckboxes('p60')} | Horário: ${getValue('p60_horario')}\n`;
+    texto += `61. Maior indisposição: ${getCheckboxes('p61')} | Horário: ${getValue('p61_horario')}\n`;
+    texto += `62. Evacuação:\n`;
+    texto += `   - Frequência: ${getValue('p62_frequencia')}\n`;
+    texto += `   - Horário: ${getValue('p62_horario')}\n`;
+    texto += `   - Incomuns: ${getValue('p62_incomuns')}\n`;
+    texto += `63. Gases/Distensão: ${getCheckboxes('p63')} | Piora: ${getValue('p63_piora')} | Melhora: ${getValue('p63_melhora')}\n`;
+    texto += `64. Urina:\n`;
+    texto += `   - Frequência: ${getValue('p64_frequencia')}\n`;
+    texto += `   - Acorda à noite: ${getValue('p64_noite')}\n`;
+    texto += `   - Incomun: ${getValue('p64_incomun')}\n`;
+    texto += `65. Sensibilidade física: ${getCheckboxes('p65')}\n`;
+    texto += `66. Reação à dor: ${getCheckboxes('p66')} | Outra: ${getValue('p66_outra')}\n`;
+    texto += `67. Reação a mudanças: ${getValue('p67')}\n`;
+    texto += `68. Reação ao ser contrariado(a): ${getValue('p68')}\n`;
+    texto += `69. Reação a injustiças: ${getCheckboxes('p69')} | Outra: ${getValue('p69_outra')}\n`;
+    texto += `70. Reação a perdas: ${getValue('p70')}\n`;
+    texto += `71. Preferência de companhia: ${getCheckboxes('p71')}\n`;
+    texto += `72. Padrão de choro: ${getCheckboxes('p72')}\n`;
+    texto += `73. Padrão de raiva: ${getCheckboxes('p73')} | Outra: ${getValue('p73_outra')}\n`;
+    texto += `74. Pós-discussão: ${getCheckboxes('p74')} | Outra: ${getValue('p74_outra')}\n`;
 
-  <!-- 57 -->
-  <label class="rotulo">57. Sensibilidade ao ambiente (Como se sente em ambientes):</label>
-  <label class="subtexto">Fechados:</label>
-  <input type="texto" name="sensibilidade_fechados">
-  <label class="subtexto">Abertos:</label>
-  <input type="texto" name="sensibilidade_abertos">
-  <label class="subtexto">Secos:</label>
-  <input type="texto" name="sensibilidade_secos">
-  <label class="subtexto">Úmidos:</label>
-  <input type="texto" name="sensibilidade_umidos">
-  <label class="subtexto">Com vento:</label>
-  <input type="texto" name="sensibilidade_vento">
-  <label class="subtexto">Com chuva:</label>
-  <input type="texto" name="sensibilidade_chuva">
+    // =========================================================
+    // DIGITE AQUI O SEU NÚMERO DE WHATSAPP (com DDD e 55)
+    // =========================================================
+    const numeroWhatsapp = "5522997120684"; 
 
-  <!-- 58 -->
-  <label class="rotulo">58. Preferência de ambiente:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Frio"> Frio</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Quente"> Quente</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Fresco"> Fresco</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Ar livre"> Ar livre</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Ambiente fechado"> Ambiente fechado</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pref_ambiente" value="Não percebe diferença"> Não percebe diferença</label>
-  </div>
-
-  <!-- 59 -->
-  <label class="rotulo">59. Posição para dormir:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Barriga para cima"> Barriga para cima</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Barriga para baixo"> Barriga para baixo</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Lado direito"> Lado direito</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Lado esquerdo"> Lado esquerdo</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="posicao_dormir" value="Muda constantemente"> Muda constantemente</label>
-  </div>
-  <label class="subtexto">Outra:</label>
-  <input type="texto" name="posicao_dormir_outra">
-
-  <!-- 60 -->
-  <label class="rotulo">60. Horário de maior disposição:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Manhã"> Manhã</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Tarde"> Tarde</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Noite"> Noite</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="disposicao" value="Varia muito"> Varia muito</label>
-  </div>
-  <label class="subtexto">Horário aproximado:</label>
-  <input type="texto" name="disposicao_horario">
-
-  <!-- 61 -->
-  <label class="rotulo">61. Horário de maior indisposição:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Manhã"> Manhã</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Tarde"> Tarde</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Noite"> Noite</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="indisposicao" value="Madrugada"> Madrugada</label>
-  </div>
-  <label class="subtexto">Horário aproximado:</label>
-  <input type="texto" name="indisposicao_horario">
-
-  <!-- 62 -->
-  <label class="rotulo">62. Evacuação:</label>
-  <label class="subtexto">Frequência:</label>
-  <input type="texto" name="evacuacao_frequencia">
-  <label class="subtexto">Horário habitual:</label>
-  <input type="texto" name="evacuacao_horario">
-  <label class="subtexto">Características que considera incomuns:</label>
-  <textarea name="evacuacao_incomuns"></textarea>
-
-  <!-- 63 -->
-  <label class="rotulo">63. Gases e distensão abdominal:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="gases" value="Não"> Não</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="gases" value="Sim"> Sim</label>
-  </div>
-  <label class="subtexto">Piora quando?</label>
-  <input type="texto" name="gases_piora">
-  <label class="subtexto">Melhora quando?</label>
-  <input type="texto" name="gases_melhora">
-
-  <!-- 64 -->
-  <label class="rotulo">64. Urina:</label>
-  <label class="subtexto">Frequência habitual:</label>
-  <input type="texto" name="urina_frequencia">
-  <label class="subtexto">Acorda à noite para urinar?</label>
-  <input type="texto" name="urina_noite">
-  <label class="subtexto">Há alguma característica urinária que considere incomum?</label>
-  <textarea name="urina_incomun"></textarea>
-
-  <!-- 65 -->
-  <label class="rotulo">65. Sensibilidade física (É especialmente sensível a):</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Dor"> Dor</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Ruídos"> Ruídos</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Luz"> Luz</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Cheiros"> Cheiros</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Toque"> Toque</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Pressão"> Pressão</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Temperatura"> Temperatura</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="sensibilidade_fisica" value="Nenhum desses"> Nenhum desses</label>
-  </div>
-
-  <!-- 66 -->
-  <label class="rotulo">66. Reação à dor (Quando sente dor, tende a):</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Ficar irritado(a)"> Ficar irritado(a)</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Ficar ansioso(a)"> Ficar ansioso(a)</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Ficar quieto(a)"> Ficar quieto(a)</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Procurar companhia"> Procurar companhia</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Preferir ficar sozinho(a)"> Preferir ficar sozinho(a)</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Precisar se movimentar"> Precisar se movimentar</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_dor" value="Precisar ficar imóvel"> Precisar ficar imóvel</label>
-  </div>
-  <label class="subtexto">Outra:</label>
-  <input type="texto" name="reacao_dor_outra">
-
-  <!-- 67 -->
-  <label class="rotulo">67. Reação a mudanças:</label>
-  <label class="subtexto">Como reage normalmente a mudanças inesperadas?</label>
-  <textarea name="reacao_mudancas"></textarea>
-
-  <!-- 68 -->
-  <label class="rotulo">68. Reação quando contrariado(a):</label>
-  <label class="subtexto">O que acontece primeiro?</label>
-  <textarea name="reacao_contrariado"></textarea>
-
-  <!-- 69 -->
-  <label class="rotulo">69. Reação quando é injustiçado(a):</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Confronto imediatamente"> Confronto imediatamente</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Fico em silêncio"> Fico em silêncio</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Fico com raiva"> Fico com raiva</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Fico triste"> Fico triste</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Guardo ressentimento"> Guardo ressentimento</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="reacao_injustica" value="Tento esquecer"> Tento esquecer</label>
-  </div>
-  <label class="subtexto">Outra:</label>
-  <input type="texto" name="reacao_injustica_outra">
-
-  <!-- 70 -->
-  <label class="rotulo">70. Reação quando perde algo ou alguém importante:</label>
-  <label class="subtexto">Como costuma vivenciar a perda?</label>
-  <textarea name="reacao_perda"></textarea>
-
-  <!-- 71 -->
-  <label class="rotulo">71. Companhia (Quando está emocionalmente mal, prefere):</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Ficar sozinho(a)"> Ficar sozinho(a)</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Ter alguém próximo"> Ter alguém próximo</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Conversar muito"> Conversar muito</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Apenas ter alguém por perto, sem conversar"> Apenas ter alguém por perto, sem conversar</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="companhia" value="Depende da situação"> Depende da situação</label>
-  </div>
-
-  <!-- 72 -->
-  <label class="rotulo">72. Choro:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Choro facilmente"> Choro facilmente</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Tenho dificuldade para chorar"> Tenho dificuldade para chorar</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Choro somente sozinho(a)"> Choro somente sozinho(a)</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Choro quando alguém me acolhe"> Choro quando alguém me acolhe</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="choro" value="Raramente choro"> Raramente choro</label>
-  </div>
-
-  <!-- 73 -->
-  <label class="rotulo">73. Raiva (Quando sente raiva, normalmente):</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Demonstro imediatamente"> Demonstro imediatamente</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Reprimo"> Reprimo</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Fico em silêncio"> Fico em silêncio</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Choro"> Choro</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Grito"> Grito</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Me afasto"> Me afasto</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="raiva" value="Fico pensando no acontecimento por muito tempo"> Fico pensando no acontecimento por muito tempo</label>
-  </div>
-  <label class="subtexto">Outra:</label>
-  <input type="texto" name="raiva_outra">
-
-  <!-- 74 -->
-  <label class="rotulo">74. Sensação predominante após uma discussão:</label>
-  <div class="grupo-de-caixas-de-selecao">
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Alívio"> Alívio</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Culpa"> Culpa</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Raiva"> Raiva</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Tristeza"> Tristeza</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Vergonha"> Vergonha</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Medo"> Medo</label>
-    <label class="item-de-caixa-de-selecao"><input type="checkbox" name="pos_discussao" value="Fico pensando no assunto por muito tempo"> Fico pensando no assunto por muito tempo</label>
-  </div>
-  <label class="subtexto">Outra:</label>
-  <input type="texto" name="pos_discussao_outra">
-</div>
-
-    // =========================================================================
-    // 🟢 COLOQUE SEU NUMERO DE WHATSAPP COM DDD (Apenas Números)
-    // =========================================================================
-    var MEU_NUMERO_WHATSAPP = "5522997120684";
-    // =========================================================================
-
-    var link = "https://wa.me/" + MEU_NUMERO_WHATSAPP + "?text=" + encodeURIComponent(txt);
-    window.open(link, '_blank');
-  }
+    const url = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+  });
 </script>
-
-</body>
-</html>
